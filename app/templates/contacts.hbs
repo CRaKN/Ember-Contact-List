@@ -1,0 +1,13 @@
+{{outlet}}
+<h1>Contacts</h1>
+{{#each model as |contact|}}
+<div class="well">
+    <h4>{{#link-to 'contacts.edit' contact.id}}{{contact.firstName}} {{contact.lastName}}{{/link-to}}</h4>
+    <p>Phone: {{contact.phoneNumber}}</p>
+    <p>Email: {{contact.email}}</p>
+    <button {{action 'deleteContact' contact.id}} class="btn btn-danger">Delete</button>
+</div>
+{{else}}
+<h3>You don't have any contacts yet! Add some!</h3>
+{{/each}}
+
