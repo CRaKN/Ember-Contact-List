@@ -1,7 +1,11 @@
 # contactlist
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This basic CRUD application is a contact list connected to a Firebase database that allows you to add contact, edit, and delete them. Built in order to learn Ember and demonstrate coding ability. 
+
+## Tech Used
+* [Emberfire](https://github.com/firebase/emberfire)
+
+
 
 ## Prerequisites
 

@@ -1,0 +1,24 @@
+export default function(){
+  this.transition(
+    this.fromRoute('contacts.index'),
+    this.toRoute('contacts.details'),
+    this.use('fade'),
+    this.reverse('fade'),
+  );
+  this.transition(
+    this.fromRoute('contacts.details'),
+    this.toRoute('contacts.edit'),
+    this.use('toRight'),
+    this.reverse('toLeft')
+  );
+  this.transition(
+    this.fromRoute('contacts.details'),
+    this.toRoute('contacts.new'),
+    this.use('fade'),
+    this.reverse('fade')
+  );
+  this.transition(
+    this.withinRoute('contacts.details'),
+    this.use('toRight'),
+  );
+}

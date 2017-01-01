@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('contacts', {resetNamespace: true}, function() {
     this.route('new');
+    this.route('details', {path: '/details/:contact_id'});
     this.route('edit', {path: '/edit/:contact_id'});
   });
 });

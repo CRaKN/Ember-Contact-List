@@ -1,0 +1,7 @@
+<div id="liquid-bind" class="well">
+  <h2>{{model.firstName}} {{model.lastName}}</h2>
+  <p>{{model.email}}</p>
+  <p>{{model.phoneNumber}}</p>
+  {{#link-to 'contacts.edit' model.id}}<button class="btn btn-primary">Edit</button>{{/link-to}}
+  <button {{action 'deleteContact' model.id}} class="btn btn-danger">Delete</button>
+</div>

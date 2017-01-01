@@ -1,13 +1,17 @@
-{{outlet}}
-<h1>Contacts</h1>
-{{#each model as |contact|}}
-<div class="well">
-    <h4>{{#link-to 'contacts.edit' contact.id}}{{contact.firstName}} {{contact.lastName}}{{/link-to}}</h4>
-    <p>Phone: {{contact.phoneNumber}}</p>
-    <p>Email: {{contact.email}}</p>
-    <button {{action 'deleteContact' contact.id}} class="btn btn-danger">Delete</button>
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    {{liquid-outlet}}
+  </div>
+  <div class="col-xs-6 col-xs-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">Contacts</div>
+      {{#each model as |contact|}}
+      <ul class="list-group">
+        <li class="list-group-item">{{#link-to 'contacts.details' contact.id}}{{contact.firstName}} {{contact.lastName}}{{/link-to}}</li>
+      </ul>
+      {{else}}
+      <div class="panel-body">You don't have any contacts yet! {{#link-to 'contacts.new'}}Add some!{{/link-to}}</div>
+      {{/each}}
+    </div>
+  </div>
 </div>
-{{else}}
-<h3>You don't have any contacts yet! Add some!</h3>
-{{/each}}
-
