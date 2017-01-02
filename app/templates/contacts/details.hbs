@@ -1,7 +1,11 @@
 <div id="liquid-bind" class="well">
   <h2>{{model.firstName}} {{model.lastName}}</h2>
-  <p>{{model.email}}</p>
-  <p>{{model.phoneNumber}}</p>
-  {{#link-to 'contacts.edit' model.id}}<button class="btn btn-primary">Edit</button>{{/link-to}}
-  <button {{action 'deleteContact' model.id}} class="btn btn-danger">Delete</button>
+  <div class="detailContainer">
+    <a href="mailto:{{model.email}}" class="email">{{model.email}}</a>
+    <a href="tel:{{model.phoneNumber}}" class="phone">{{model.phoneNumber}}</a>
+  </div>
+  <div class="buttonContainer">
+    {{#link-to 'contacts.edit' model.id}}<button class="btn btn-primary">Edit</button>{{/link-to}}
+    <button {{action 'deleteContact' model.id}} class="btn btn-danger">Delete</button>
+  </div>
 </div>

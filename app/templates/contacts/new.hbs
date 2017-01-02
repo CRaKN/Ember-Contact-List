@@ -1,21 +1,31 @@
 <form class="well">
-	<h3>Add A New Contact</h3>
-	<div class="form-group">
-		<label>First Name</label>
-		{{input type="text" class="form-control" value=firstName placeholder="First Name"}}
-	</div>
-    <div class="form-group">
-		<label>Last Name</label>
-		{{input type="text" class="form-control" value=lastName placeholder="Last Name"}}
-	</div>
-    <div class="form-group">
-		<label>Email</label>
-		{{input type="text" class="form-control" value=email placeholder="Email"}}
-	</div>
-    <div class="form-group">
-		<label>Phone Number</label>
-		{{input type="text" class="form-control" value=phoneNumber placeholder="Phone Number"}}
-	</div>
-	<button {{action 'addContact'}} class="btn btn-primary">Submit</button> 
+  <h3>Add A New Contact</h3>
+  <div class="form-group">
+    {{#form-control as |error|}}
+    <label>First Name</label> {{input type="text" class="form-control" value=firstName placeholder="First Name" required=true}}
+    {{#if error}}
+    <p>{{error}}</p>
+    {{/if}} {{/form-control}}
+  </div>
+  <div class="form-group">
+    {{#form-control as |error|}}
+    <label>Last Name</label> {{input type="text" class="form-control" value=lastName placeholder="Last Name" required=true}}
+    {{#if error}}
+    <p>{{error}}</p>
+    {{/if}} {{/form-control}}
+  </div>
+  <div class="form-group">
+    {{#form-control as |error|}}
+    <label>Email</label> {{input type="text" class="form-control" value=email placeholder="Email" type="email" required=true}}
+    {{#if error}}
+    <p>{{error}}</p>
+    {{/if}} {{/form-control}}
+  </div>
+  <div class="form-group">
+    {{#form-control as |error|}}
+    <label>Phone Number</label> {{input type="text" class="form-control" value=phoneNumber placeholder="Phone Number" type='tel' required=true}} {{#if error}}
+    <p>{{error}}</p>
+    {{/if}} {{/form-control}}
+  </div>
+  <button {{action 'addContact'}} class="btn btn-primary">Submit</button>
 </form>
-

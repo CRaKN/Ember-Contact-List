@@ -1,0 +1,155 @@
+//--------------------------------
+//Global Colors
+//--------------------------------
+$black-color: #181818;
+$main-color: #282828;
+$green-color: #7ED321 - 30;
+$off-white: #9B9B9B;
+//--------------------------------
+//Header
+//--------------------------------
+.navbar {
+  background-color: $black-color;
+  border: none;
+  .navbar-brand {
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  #navbar {
+    ul {
+      a {
+        color: $off-white;
+      }
+      a:hover {
+        color: white;
+        transition: .3s;
+      }
+      a:active {
+        color: white;
+      }
+    }
+  }
+}
+
+//--------------------------------
+//Contacts
+//--------------------------------
+body {
+  background-color: $main-color;
+  .panel {
+    border-color: $black-color;
+    border: solid 2px;
+    border-radius: 5px;
+    .panel-heading {
+      background-color: $black-color;
+      border: none;
+      font-size: 20px;
+      text-align: center;
+      color: $off-white;
+    }
+    ul {
+      li {
+        background-color: $black-color + 10;
+        border-color: $black-color;
+        a {
+          color: $off-white + 50;
+          font-size: 16px;
+          text-decoration: none;
+          &:active {
+            color: white;
+          }
+        }
+        a:hover {
+          color: white;
+          transition: .3s;
+        }
+      }
+    }
+  }
+}
+
+//--------------------------------
+//Details
+//--------------------------------
+#liquid-bind {
+  background-color: $black-color;
+  color: white;
+  border: none;
+  .detailContainer {
+    padding: 10px 0px;
+    display: inline-block;
+    a {
+      display: inline-block;
+      font-size: 16px;
+      color: white;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $off-white;
+      transition: .3s;
+    }
+    .phone {
+      padding-left: 30px;
+    }
+  }
+  .buttonContainer {
+    display: inline-block;
+    float: right;
+    .btn-primary {
+      background-color: $green-color;
+      border: 0;
+      &:hover {
+        background-color: $green-color + 30;
+        transition: .4s;
+      }
+    }
+    .btn-danger {
+      border: 0;
+      margin-left: 20px;
+      &:hover {
+        transition: .4s;
+      }
+    }
+  }
+}
+
+//--------------------------------
+//Edit/New Form
+//--------------------------------
+.well {
+  background-color: $black-color;
+  border: 0;
+  color: white;
+  label {
+    color: $off-white;
+  }
+  .btn-primary {
+    border: none;
+    background-color: $green-color;
+  }
+  .form-group {
+    p {
+      color: $green-color;
+      padding-top: 4px;
+    }
+  }
+}
+
+//--------------------------------
+//Media Queries 
+//--------------------------------
+@media screen and (max-width: 790px) {
+  #liquid-bind {
+    margin-bottom: 30px;
+    padding-bottom: 50px;
+    .detailContainer {
+      display: block;
+    }
+    .buttonContainer {
+      float: left;
+      position: inherit;
+    }
+  }
+}
